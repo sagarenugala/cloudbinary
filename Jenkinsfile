@@ -52,13 +52,13 @@ pipeline {
         }
           stage('Stage-9 : Deployment - Deploy a Artifact sagar/2.0.0-SNAPSHOT.war file to Tomcat Server') { 
             steps {
-                sh 'curl -u tomcat:meghana203 -T target/**.war "http://http://50.19.195.83:8080/manager/text/deploy?path=/cbapp&update=true"'
+                sh 'curl -u tomcat:meghana203 -T target/**.war "http://http://50.19.195.83:8080/manager/text/deploy?path=/sagar&update=true"'
             }
         } 
   
          stage('Stage-10 : SmokeTest') { 
            steps {
-               sh 'curl --retry-delay 10 --retry 5 "http://http://50.19.195.83/:8080/cbapp"'
+               sh 'curl --retry-delay 10 --retry 5 "http://http://50.19.195.83/:8080/sagar"'
            }
         }
 
